@@ -1,0 +1,9 @@
+kind: Pod #by using this debug pod we can connect to backend
+apiVersion: v1
+metadata:
+  name: debug
+  namespace: expense
+spec:
+  containers:
+  - name: debug
+    image: ravidaws/debug:v1.0
