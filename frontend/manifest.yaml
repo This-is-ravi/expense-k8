@@ -103,7 +103,7 @@ metadata:
     project: expense
     tier: web
 spec:
-  replicas: 2
+  replicas: 2 #its a static value
   selector:
     matchLabels:
       component: frontend
