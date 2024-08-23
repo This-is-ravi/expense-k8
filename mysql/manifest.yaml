@@ -26,12 +26,12 @@ spec:
       containers:
       - name: mysql
         image: ravidaws/mysql:v1.0
-        readinessProbe:
+        readinessProbe: #here wen port 3306 is opened,then our container is ready
           tcpSocket:
             port: 3306
-          initialDelaySeconds: 10
-          periodSeconds: 5
-        livenessProbe:
+          initialDelaySeconds: 10 #giving time till its get ready
+          periodSeconds: 5 #checking every 5 sec
+        livenessProbe: #if health check fails it wil restart till it gets up
           tcpSocket:
             port: 3306
           initialDelaySeconds: 10
@@ -41,7 +41,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql  #service name cluster ip 
+  name: mysql
   namespace: expense
 spec:
   selector:

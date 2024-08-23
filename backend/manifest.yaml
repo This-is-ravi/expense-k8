@@ -48,16 +48,16 @@ spec:
             memory: "256Mi"
         livenessProbe:
           httpGet:
-            path: /health
+            path: /health #endpoint
             port: 8080
-          failureThreshold: 2
+          failureThreshold: 2 #
           periodSeconds: 5
-          initialDelaySeconds: 30
+          initialDelaySeconds: 30 #it sho
         readinessProbe:
           httpGet:
             path: /health
             port: 8080
-          failureThreshold: 2
+          failureThreshold: 2 #if it fails for 2 times,it wil restart
           periodSeconds: 5
           initialDelaySeconds: 30
         envFrom:
