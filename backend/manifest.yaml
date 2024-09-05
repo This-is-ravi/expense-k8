@@ -35,7 +35,7 @@ spec:
       initContainers: #to check the DB connection,if its success,then only we wil start BE container
       - name: init-myservice
         image: busybox:1.28
-        command: ['sh', '-c', "until nslookup db-dev.daws78s.online; do echo waiting for myservice; sleep 2; done"] #wait for mysql connection
+        command: ['sh', '-c', "until nslookup db-dev.csvdaws78s.online; do echo waiting for myservice; sleep 2; done"] #wait for mysql connection
       containers:
       - name: backend
         image: ravidaws/backend:v1.0
